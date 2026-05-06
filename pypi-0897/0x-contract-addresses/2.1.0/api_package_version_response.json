@@ -1,0 +1,131 @@
+{
+    "info": {
+        "author": "F. Eugene Aumson",
+        "author_email": "feuGeneA@users.noreply.github.com",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "Intended Audience :: Financial and Insurance Industry",
+            "License :: OSI Approved :: Apache Software License",
+            "Natural Language :: English",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 3 :: Only",
+            "Programming Language :: Python :: 3.6",
+            "Programming Language :: Python :: 3.7",
+            "Topic :: Internet :: WWW/HTTP",
+            "Topic :: Office/Business :: Financial",
+            "Topic :: Other/Nonlisted Topic",
+            "Topic :: Security :: Cryptography",
+            "Topic :: Software Development :: Libraries",
+            "Topic :: Utilities"
+        ],
+        "description": "## 0x-contract-addresses\n\nAddresses at which the 0x smart contracts have been deployed.\n\nRead the [documentation](http://0x-contract-addresses-py.s3-website-us-east-1.amazonaws.com/)\n\n## Installing\n\n```bash\npip install 0x-contract-addresses\n```\n\n## Contributing\n\nWe welcome improvements and fixes from the wider community! To report bugs within this package, please create an issue in this repository.\n\nPlease read our [contribution guidelines](../../CONTRIBUTING.md) before getting started.\n\n### Install Code and Dependencies\n\n```bash\npip install -e .[dev]\n```\n\n### Clean\n\n`./setup.py clean --all`\n\n### Lint\n\n`./setup.py lint`\n\n### Build Documentation\n\n`./setup.py build_sphinx`\n\n### More\n\nSee `./setup.py --help-commands` for more info.\n\n\n",
+        "description_content_type": "text/markdown",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "dynamic": null,
+        "home_page": "https://github.com/0xproject/0x-monorepo/tree/development/python-packages/contract_addresses",
+        "keywords": "ethereum cryptocurrency 0x decentralized blockchain dex exchange",
+        "license": "Apache 2.0",
+        "license_expression": null,
+        "license_files": null,
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "0x-contract-addresses",
+        "package_url": "https://pypi.org/project/0x-contract-addresses/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/0x-contract-addresses/",
+        "project_urls": {
+            "Homepage": "https://github.com/0xproject/0x-monorepo/tree/development/python-packages/contract_addresses"
+        },
+        "provides_extra": null,
+        "release_url": "https://pypi.org/project/0x-contract-addresses/2.1.0/",
+        "requires_dist": [
+            "mypy-extensions",
+            "bandit ; extra == 'dev'",
+            "black ; extra == 'dev'",
+            "coverage ; extra == 'dev'",
+            "coveralls ; extra == 'dev'",
+            "mypy ; extra == 'dev'",
+            "mypy-extensions ; extra == 'dev'",
+            "pycodestyle ; extra == 'dev'",
+            "pydocstyle ; extra == 'dev'",
+            "pylint ; extra == 'dev'",
+            "pytest ; extra == 'dev'",
+            "sphinx ; extra == 'dev'",
+            "tox ; extra == 'dev'",
+            "twine ; extra == 'dev'"
+        ],
+        "requires_python": ">=3.6, <4",
+        "summary": "Addresses at which the 0x smart contracts have been deployed",
+        "version": "2.1.0",
+        "yanked": false,
+        "yanked_reason": null
+    },
+    "last_serial": 6238009,
+    "ownership": {
+        "organization": null,
+        "roles": [
+            {
+                "role": "Owner",
+                "user": "PirosB3"
+            },
+            {
+                "role": "Owner",
+                "user": "feuGeneA"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "blake2b_256": "0ee72bc27a48170fc7d4f458fda9d9ff973f1780bf1b0fa2fd71de89124d7014",
+                "md5": "1a99d9744718db24155938acfa9cf5bb",
+                "sha256": "dd78dd0429bac1ff88e1d1bf5422f9f17d7738e1fa49da97755056792d9f5945"
+            },
+            "downloads": -1,
+            "filename": "0x_contract_addresses-2.1.0-py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "1a99d9744718db24155938acfa9cf5bb",
+            "packagetype": "bdist_wheel",
+            "python_version": "py3",
+            "requires_python": ">=3.6, <4",
+            "size": 5210,
+            "upload_time": "2019-07-15T06:24:07",
+            "upload_time_iso_8601": "2019-07-15T06:24:07.790004Z",
+            "url": "https://files.pythonhosted.org/packages/0e/e7/2bc27a48170fc7d4f458fda9d9ff973f1780bf1b0fa2fd71de89124d7014/0x_contract_addresses-2.1.0-py3-none-any.whl",
+            "yanked": false,
+            "yanked_reason": null
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "blake2b_256": "4752d189b2c6d2954effaf12960b8916b9d62fb8150083a42ef9b5e62462ac32",
+                "md5": "4680398cbf8700a5736c42cd20c2fe76",
+                "sha256": "d1df84b35d9a35b73c1054c090942e31ff152526249d8d251c7b2fc684e045ab"
+            },
+            "downloads": -1,
+            "filename": "0x-contract-addresses-2.1.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "4680398cbf8700a5736c42cd20c2fe76",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "requires_python": ">=3.6, <4",
+            "size": 5559,
+            "upload_time": "2019-07-15T06:24:09",
+            "upload_time_iso_8601": "2019-07-15T06:24:09.412354Z",
+            "url": "https://files.pythonhosted.org/packages/47/52/d189b2c6d2954effaf12960b8916b9d62fb8150083a42ef9b5e62462ac32/0x-contract-addresses-2.1.0.tar.gz",
+            "yanked": false,
+            "yanked_reason": null
+        }
+    ],
+    "vulnerabilities": []
+}

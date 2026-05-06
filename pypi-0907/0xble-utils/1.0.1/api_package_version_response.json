@@ -1,0 +1,102 @@
+{
+    "info": {
+        "author": null,
+        "author_email": null,
+        "bugtrack_url": null,
+        "classifiers": [],
+        "description": "",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": null,
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "dynamic": null,
+        "home_page": null,
+        "keywords": null,
+        "license": null,
+        "license_expression": null,
+        "license_files": null,
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "0xble-utils",
+        "package_url": "https://pypi.org/project/0xble-utils/",
+        "platform": null,
+        "project_url": "https://pypi.org/project/0xble-utils/",
+        "project_urls": null,
+        "provides_extra": null,
+        "release_url": "https://pypi.org/project/0xble-utils/1.0.1/",
+        "requires_dist": [
+            "click",
+            "pyfzf",
+            "termcolor",
+            "rich",
+            "pytz",
+            "dateparser",
+            "tenacity",
+            "notion-client"
+        ],
+        "requires_python": null,
+        "summary": null,
+        "version": "1.0.1",
+        "yanked": false,
+        "yanked_reason": null
+    },
+    "last_serial": 24747050,
+    "ownership": {
+        "organization": null,
+        "roles": [
+            {
+                "role": "Owner",
+                "user": "0xble"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "blake2b_256": "af47b6776682adfe81938e97ec6e201f73fe781280d6c0177c80fbbdc9d8b177",
+                "md5": "06f432a35e3d2f2e9dd1d58fbceb265e",
+                "sha256": "816e71ce8812a72a9e4311ee778dc3aa2293f50da691c7e65a72841b2510650e"
+            },
+            "downloads": -1,
+            "filename": "0xble_utils-1.0.1-py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "06f432a35e3d2f2e9dd1d58fbceb265e",
+            "packagetype": "bdist_wheel",
+            "python_version": "py3",
+            "requires_python": null,
+            "size": 1039,
+            "upload_time": "2024-08-26T23:08:55",
+            "upload_time_iso_8601": "2024-08-26T23:08:55.178616Z",
+            "url": "https://files.pythonhosted.org/packages/af/47/b6776682adfe81938e97ec6e201f73fe781280d6c0177c80fbbdc9d8b177/0xble_utils-1.0.1-py3-none-any.whl",
+            "yanked": false,
+            "yanked_reason": null
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "blake2b_256": "c61111ab44eda3637411c69fa4cb38f780a4fb2d8810d768225e0fa8b8cff6dc",
+                "md5": "e46bf5c038d9f4f48d836c36ec1a8e63",
+                "sha256": "5a8aef1df318825a2baba7f2bbdb5cb893eaef2ff4465bd23b0eabf2d4179bfd"
+            },
+            "downloads": -1,
+            "filename": "0xble_utils-1.0.1.tar.gz",
+            "has_sig": false,
+            "md5_digest": "e46bf5c038d9f4f48d836c36ec1a8e63",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "requires_python": null,
+            "size": 7972,
+            "upload_time": "2024-08-26T23:08:56",
+            "upload_time_iso_8601": "2024-08-26T23:08:56.435811Z",
+            "url": "https://files.pythonhosted.org/packages/c6/11/11ab44eda3637411c69fa4cb38f780a4fb2d8810d768225e0fa8b8cff6dc/0xble_utils-1.0.1.tar.gz",
+            "yanked": false,
+            "yanked_reason": null
+        }
+    ],
+    "vulnerabilities": []
+}

@@ -1,0 +1,131 @@
+{
+    "info": {
+        "author": "F. Eugene Aumson",
+        "author_email": "feuGeneA@users.noreply.github.com",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "Intended Audience :: Financial and Insurance Industry",
+            "License :: OSI Approved :: Apache Software License",
+            "Natural Language :: English",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 3 :: Only",
+            "Programming Language :: Python :: 3.6",
+            "Programming Language :: Python :: 3.7",
+            "Topic :: Internet :: WWW/HTTP",
+            "Topic :: Office/Business :: Financial",
+            "Topic :: Other/Nonlisted Topic",
+            "Topic :: Security :: Cryptography",
+            "Topic :: Software Development :: Libraries",
+            "Topic :: Utilities"
+        ],
+        "description": "## 0x-contract-addresses\n\nAddresses at which the 0x smart contracts have been deployed.\n\nRead the [documentation](http://0x-contract-addresses-py.s3-website-us-east-1.amazonaws.com/)\n\n## Installing\n\n```bash\npip install 0x-contract-addresses\n```\n\n## Contributing\n\nWe welcome improvements and fixes from the wider community! To report bugs within this package, please create an issue in this repository.\n\nPlease read our [contribution guidelines](../../CONTRIBUTING.md) before getting started.\n\n### Install Code and Dependencies\n\n```bash\npip install -e .[dev]\n```\n\n### Clean\n\n`./setup.py clean --all`\n\n### Lint\n\n`./setup.py lint`\n\n### Build Documentation\n\n`./setup.py build_sphinx`\n\n### More\n\nSee `./setup.py --help-commands` for more info.\n\n\n",
+        "description_content_type": "text/markdown",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "dynamic": null,
+        "home_page": "https://github.com/0xproject/0x-monorepo/tree/development/python-packages/contract_addresses",
+        "keywords": "ethereum cryptocurrency 0x decentralized blockchain dex exchange",
+        "license": "Apache 2.0",
+        "license_expression": null,
+        "license_files": null,
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "0x-contract-addresses",
+        "package_url": "https://pypi.org/project/0x-contract-addresses/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/0x-contract-addresses/",
+        "project_urls": {
+            "Homepage": "https://github.com/0xproject/0x-monorepo/tree/development/python-packages/contract_addresses"
+        },
+        "provides_extra": null,
+        "release_url": "https://pypi.org/project/0x-contract-addresses/3.0.0.dev3/",
+        "requires_dist": [
+            "mypy-extensions",
+            "bandit ; extra == 'dev'",
+            "black ; extra == 'dev'",
+            "coverage ; extra == 'dev'",
+            "coveralls ; extra == 'dev'",
+            "mypy ; extra == 'dev'",
+            "mypy-extensions ; extra == 'dev'",
+            "pycodestyle ; extra == 'dev'",
+            "pydocstyle ; extra == 'dev'",
+            "pylint ; extra == 'dev'",
+            "pytest ; extra == 'dev'",
+            "sphinx ; extra == 'dev'",
+            "tox ; extra == 'dev'",
+            "twine ; extra == 'dev'"
+        ],
+        "requires_python": ">=3.6, <4",
+        "summary": "Addresses at which the 0x smart contracts have been deployed",
+        "version": "3.0.0.dev3",
+        "yanked": false,
+        "yanked_reason": null
+    },
+    "last_serial": 6238009,
+    "ownership": {
+        "organization": null,
+        "roles": [
+            {
+                "role": "Owner",
+                "user": "PirosB3"
+            },
+            {
+                "role": "Owner",
+                "user": "feuGeneA"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "blake2b_256": "5dbe460cab4688fa1025c65ecba1f3d56264faa0319ee3ad6e38475f8125aca1",
+                "md5": "99870502b410e8303c6c7c21b80f1422",
+                "sha256": "63f47a7735e5bdf089a2d87c469540b58ce82f10bae4ae076fac25a5f5e9f02c"
+            },
+            "downloads": -1,
+            "filename": "0x_contract_addresses-3.0.0.dev3-py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "99870502b410e8303c6c7c21b80f1422",
+            "packagetype": "bdist_wheel",
+            "python_version": "py3",
+            "requires_python": ">=3.6, <4",
+            "size": 7422,
+            "upload_time": "2019-11-20T22:34:28",
+            "upload_time_iso_8601": "2019-11-20T22:34:28.574027Z",
+            "url": "https://files.pythonhosted.org/packages/5d/be/460cab4688fa1025c65ecba1f3d56264faa0319ee3ad6e38475f8125aca1/0x_contract_addresses-3.0.0.dev3-py3-none-any.whl",
+            "yanked": false,
+            "yanked_reason": null
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "blake2b_256": "76f7c6971f37fe7890d8747f8e7de1c2613a75c154d3f05aca0f88fe7d0c0ff9",
+                "md5": "b048cc098cba9e8ee32c36e666089faa",
+                "sha256": "31fa7d3598fd9667a9d747287cc3c531e0f0fb5999e198903b6f681edbd8f270"
+            },
+            "downloads": -1,
+            "filename": "0x-contract-addresses-3.0.0.dev3.tar.gz",
+            "has_sig": false,
+            "md5_digest": "b048cc098cba9e8ee32c36e666089faa",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "requires_python": ">=3.6, <4",
+            "size": 7920,
+            "upload_time": "2019-11-20T22:34:29",
+            "upload_time_iso_8601": "2019-11-20T22:34:29.715648Z",
+            "url": "https://files.pythonhosted.org/packages/76/f7/c6971f37fe7890d8747f8e7de1c2613a75c154d3f05aca0f88fe7d0c0ff9/0x-contract-addresses-3.0.0.dev3.tar.gz",
+            "yanked": false,
+            "yanked_reason": null
+        }
+    ],
+    "vulnerabilities": []
+}
