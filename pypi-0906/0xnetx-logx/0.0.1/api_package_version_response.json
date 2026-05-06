@@ -1,0 +1,114 @@
+{
+    "info": {
+        "author": "0xNetx",
+        "author_email": null,
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 3 - Alpha",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.10",
+            "Programming Language :: Python :: 3.11",
+            "Programming Language :: Python :: 3.8",
+            "Programming Language :: Python :: 3.9",
+            "Topic :: Software Development :: Libraries :: Python Modules"
+        ],
+        "description": "# logx\n\nPython implementation of structured logging compatible with NETSTARS log specification v1.3\n\n## Introduction\n\nlogx is a universal logging library that conforms to the NETSTARS log specification requirements. By default, it supports [NETSTARS Log Specification v1.3](https://tech-netstars.atlassian.net/wiki/spaces/MSD/pages/301269044/NETSTARS+v1.3). Under specification v1.3, logx outputs logs in JSON format, as shown in the following example:\n\n```json\n{\"compliance\":\"1.3\",\"log_app_id\":\"test_app_id\",\"log_app_version\":\"0.1\",\"log_category\":\"srv-exception-log\",\"log_event_id\":\"\",\"log_event_time\":\"2022-01-21T10:53:21.774+09:00\",\"log_level\":\"fatal\",\"log_time\":\"2022-01-21T10:53:21.774+09:00\",\"message\":\"this is a test message\"}\n```\n\nJSON format logs can nest JSON, and newlines and double quotes in key-value content are automatically escaped.\n\nDuring development and debugging, you can set the compliance level to \"0\" to output simple semicolon-separated log information:\n\n```\n2022-01-21T10:56:43.901+09:00 [INF] item_1: 23; log_event_time: 2022-01-21T10:56:43.901+09:00; message: this is a test message\n```\n\n> __Note:__ Specification v1.3 meets SLA requirements and can be parsed by Elasticsearch; specification 0 is only recommended for development and testing phases.\n\n## Log Levels\n\nLog levels in logx are integers conforming to the v1.3 log specification. Valid range is `[0,6]`, where 0 means no log output, and 1-6 correspond to `fatal`, `error`, `warn`, `info`, `debug`, `trace` respectively. Larger values provide richer output information. The maximum output log level can be specified in the `logx.init()` initialization method to control the level of detail. You can also dynamically adjust the maximum log output level using the `logx.set_max_level()` method.\n\n## Usage\n\n### Complete Usage Example\n\n```python\nfrom logx import init, errorf, Log, InfoLvl, New, CustomItem, DebugLvl\n\n# Initialize logging\ninit(DebugLvl, \"my_app\", \"1.0.0\", \"1.3\")  # Set to debug level to show all logs\n\n# Simple log output\nerrorf(\"\u7528\u6237\u767b\u5f55\u5931\u8d25: %s\", \"\u5bc6\u7801\u9519\u8bef\")\n\n# Custom log items\nLog(InfoLvl, \"\u7528\u6237\u64cd\u4f5c\",\n    CustomItem(\"user_id\", \"12345\"),\n    CustomItem(\"action\", \"login\"))\n\n# Use Loggerz object\nlogger = New(\n    CustomItem(\"service\", \"user-service\"),\n    CustomItem(\"version\", \"1.0.0\"),\n)\nlogger.printf(\"\u5904\u7406\u7528\u6237\u8bf7\u6c42: %s\", \"GET /api/users\")\n```\n\n### Output\n\nRunning the above code will output the following JSON formatted logs:\n\n```json\n{\"compliance\":\"1.3\",\"log_app_id\":\"my_app\",\"log_app_version\":\"1.0.0\",\"log_category\":\"srv-exception-log\",\"log_event_id\":\"\",\"log_event_time\":\"2025-10-22T19:58:30.785+08:00\",\"log_level\":\"error\",\"log_time\":\"2025-10-22T19:58:30.785+08:00\",\"message\":\"\u7528\u6237\u767b\u5f55\u5931\u8d25: \u5bc6\u7801\u9519\u8bef\"}\n{\"compliance\":\"1.3\",\"log_app_id\":\"my_app\",\"log_app_version\":\"1.0.0\",\"log_category\":\"srv-biz-process-log\",\"log_event_id\":\"\",\"log_event_time\":\"2025-10-22T19:58:30.785+08:00\",\"log_level\":\"info\",\"log_time\":\"2025-10-22T19:58:30.785+08:00\",\"message\":\"\u7528\u6237\u64cd\u4f5c\",\"user_id\":\"12345\",\"action\":\"login\"}\n{\"compliance\":\"1.3\",\"log_app_id\":\"my_app\",\"log_app_version\":\"1.0.0\",\"log_category\":\"srv-biz-process-log\",\"log_event_id\":\"\",\"log_event_time\":\"2025-10-22T19:58:30.785+08:00\",\"log_level\":\"info\",\"log_time\":\"2025-10-22T19:58:30.785+08:00\",\"message\":\"\u5904\u7406\u7528\u6237\u8bf7\u6c42: GET /api/users\",\"service\":\"user-service\",\"version\":\"1.0.0\"}\n```\n\n### Detailed Description\n\n- __Initialization__: Call the `logx.init()` method at program startup to set the maximum output log level. Usually this method is called in the `main()` function, and the parameter values can be provided through the application's configuration file.\n\n  - `DebugLvl`: Sets the log level to debug, which outputs all level logs\n  - `\"my_app\"`: Application ID\n  - `\"1.0.0\"`: Application version number\n  - `\"1.3\"`: Log specification version number. If \"0\" is specified, simple information is output, recommended only during debugging\n\n- __Simple log output__: Use methods like `logx.printf()`, `logx.errorf()` to output simple log information:\n\n```python\nlogx.errorf(\"\u7528\u6237\u767b\u5f55\u5931\u8d25: %s\", \"\u5bc6\u7801\u9519\u8bef\")\n```\n\n- __Custom log items__: Use `logx.log()` and `logx.CustomItem()` methods to achieve maximum flexibility in log information customization:\n\n```python\nlogx.Log(InfoLvl, \"\u7528\u6237\u64cd\u4f5c\",\n    CustomItem(\"user_id\", \"12345\"),\n    CustomItem(\"action\", \"login\"))\n```\n\n- __Using Loggerz objects__: Use the `logx.new()` method to create a new Loggerz object and save some common log information, so you don't have to manually pass this information each time:\n\n```python\nlogger = logx.new(\n    CustomItem(\"service\", \"user-service\"),\n    CustomItem(\"version\", \"1.0.0\"),\n)\nlogger.printf(\"\u5904\u7406\u7528\u6237\u8bf7\u6c42: %s\", \"GET /api/users\")\n```\n\n## Installation\n\n### From PyPI (Recommended)\n\n```bash\npip install 0xnetx-logx\n```\n\n### From GitHub\n\n```bash\npip install git+https://github.com/0xNetx/logx.git\n```\n\n### From Local Directory\n\nIf you've cloned the repository:\n\n```bash\ncd logx\npip install -e .\n```\n\nOr install directly:\n\n```bash\npip install -e /path/to/logx\n```\n\n## Version\n\n- **v0.0.1**: Initial release version with complete log formatting functionality\n- Supports NETSTARS v1.3 specification JSON format output\n- Supports simple text format output (compliance 0)\n- Includes hook mechanism and Loggerz object functionality\n\n## API Reference\n\n### Constants\n\n- `DisabledLvl = 0`: No log output\n- `FatalLvl = 1`: Fatal error\n- `ErrorLvl = 2`: General error\n- `WarnLvl = 3`: Warning\n- `InfoLvl = 4`: General info\n- `DebugLvl = 5`: Debug information\n- `TraceLvl = 6`: Trace information\n\n### Functions\n\n#### Initialization\n\n- `init(level, app_id, app_version, compliance)`: Initialize log configuration\n- `set_max_level(level)`: Set maximum log output level\n- `get_max_level()`: Get maximum log output level\n\n#### Logging Functions\n\n- `log(level, message, *log_items)`: Log a message with specified level\n- `fatal(*args)`: Log fatal message\n- `error(*args)`: Log error message\n- `warn(*args)`: Log warning message\n- `print(*args)`: Log info message\n- `debug(*args)`: Log debug message\n- `trace(*args)`: Log trace message\n\nEach level also has `*f` (formatted) and `*ln` (with newline) variants.\n\n#### Options\n\n- `CustomItem(key, value)`: Add custom log item\n- `Compliance(version)`: Set compliance version\n- `LogTime(time)`: Set log time\n- `EventTime(time)`: Set event time\n- `Level(level)`: Set log level\n- `Category(category)`: Set log category\n- `AppId(app_id)`: Set application ID\n- `AppVersion(version)`: Set application version\n- `EventId(event_id)`: Set event ID\n\n#### Objects\n\n- `new(*items)` -> `Loggerz`: Create a new logger object\n\n### Loggerz Class\n\nThe `Loggerz` class provides all the functionality of the global functions plus:\n\n- `enable_log_elapsed_time()`: Enable elapsed time tracking\n- `get_items()`: Get all log items\n- `set_items(*items)`: Update log items\n- `add_hook(hook)`: Add a hook function\n",
+        "description_content_type": "text/markdown",
+        "docs_url": null,
+        "download_url": null,
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "dynamic": [
+            "Home-Page",
+            "License-File",
+            "Requires-Python"
+        ],
+        "home_page": "https://github.com/0xNetx/logx",
+        "keywords": "logging, structured-logging, netstars, log-specification",
+        "license": "MIT",
+        "license_expression": null,
+        "license_files": [
+            "LICENSE"
+        ],
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "0xnetx-logx",
+        "package_url": "https://pypi.org/project/0xnetx-logx/",
+        "platform": null,
+        "project_url": "https://pypi.org/project/0xnetx-logx/",
+        "project_urls": {
+            "Homepage": "https://github.com/0xNetx/logx",
+            "Issues": "https://github.com/0xNetx/logx/issues",
+            "Repository": "https://github.com/0xNetx/logx"
+        },
+        "provides_extra": null,
+        "release_url": "https://pypi.org/project/0xnetx-logx/0.0.1/",
+        "requires_dist": null,
+        "requires_python": ">=3.8",
+        "summary": "A Python logging library compatible with NETSTARS log specification v1.3",
+        "version": "0.0.1",
+        "yanked": false,
+        "yanked_reason": null
+    },
+    "last_serial": 32171055,
+    "ownership": {
+        "organization": null,
+        "roles": [
+            {
+                "role": "Owner",
+                "user": "0xa2618"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": null,
+            "digests": {
+                "blake2b_256": "e42b28862f7b3143085acfb8445dcdadc23efbf5ba3c574dffec8c91b25bbda7",
+                "md5": "5478c9541c51153f375cc303d4c37ff2",
+                "sha256": "8c49488c391c76fda824fbfe9add6743408255f2f632c07b9c21fb59e2448e01"
+            },
+            "downloads": -1,
+            "filename": "0xnetx_logx-0.0.1-py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "5478c9541c51153f375cc303d4c37ff2",
+            "packagetype": "bdist_wheel",
+            "python_version": "py3",
+            "requires_python": ">=3.8",
+            "size": 4730,
+            "upload_time": "2025-11-03T11:48:18",
+            "upload_time_iso_8601": "2025-11-03T11:48:18.479138Z",
+            "url": "https://files.pythonhosted.org/packages/e4/2b/28862f7b3143085acfb8445dcdadc23efbf5ba3c574dffec8c91b25bbda7/0xnetx_logx-0.0.1-py3-none-any.whl",
+            "yanked": false,
+            "yanked_reason": null
+        },
+        {
+            "comment_text": null,
+            "digests": {
+                "blake2b_256": "f14c6e5faa4b8cc6e664c67e3c576ffa52a6b680bd6a9debae7ff48fb3025f66",
+                "md5": "fe6c35c06ad646a1afe1b9ee9afc26b4",
+                "sha256": "87927c85db52ecfeed389a8166cc0206700f7e1741a80c9b47f9a5c9b65542a2"
+            },
+            "downloads": -1,
+            "filename": "0xnetx_logx-0.0.1.tar.gz",
+            "has_sig": false,
+            "md5_digest": "fe6c35c06ad646a1afe1b9ee9afc26b4",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "requires_python": ">=3.8",
+            "size": 5164,
+            "upload_time": "2025-11-03T11:48:20",
+            "upload_time_iso_8601": "2025-11-03T11:48:20.000734Z",
+            "url": "https://files.pythonhosted.org/packages/f1/4c/6e5faa4b8cc6e664c67e3c576ffa52a6b680bd6a9debae7ff48fb3025f66/0xnetx_logx-0.0.1.tar.gz",
+            "yanked": false,
+            "yanked_reason": null
+        }
+    ],
+    "vulnerabilities": []
+}
