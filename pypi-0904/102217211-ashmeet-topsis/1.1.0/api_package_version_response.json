@@ -1,0 +1,102 @@
+{
+    "info": {
+        "author": "Ashmeet Kaur",
+        "author_email": "akaur9_be22@thapar.edu",
+        "bugtrack_url": null,
+        "classifiers": [
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python :: 3"
+        ],
+        "description": "# **TOPSIS Package**  \r\n_A Python package for decision-making using the TOPSIS method._  \r\n\r\n---\r\n\r\n## **What is TOPSIS?**  \r\nThe **Technique for Order Preference by Similarity to Ideal Solution (TOPSIS)** is a multi-criteria decision analysis method.  \r\nIt ranks alternatives based on their closeness to the ideal solution and farthest from the worst solution, making it an excellent tool for decision-making problems.  \r\n\r\n---\r\n\r\n## **Features**  \r\n- Simple and efficient implementation of the TOPSIS algorithm.  \r\n- Accepts a decision matrix via a CSV file.  \r\n- Supports customizable weights and impacts for criteria.  \r\n- Outputs the TOPSIS scores and ranks into an easy-to-read CSV file.  \r\n\r\n---\r\n\r\n## **Installation**  \r\nYou can install the package from PyPI using:  \r\n\r\n```bash\r\npip install 102217211-Ashmeet-topsis==1.1.0\r\n```\r\n\r\n---\r\n\r\n## **How to Use**  \r\n\r\n### **Run the Package**  \r\n\r\nYou can run the TOPSIS package directly from the command line using:  \r\n\r\n```bash\r\npython -m 102217211_Ashmeet_topsis <input_file> <weights> <impacts> <output_file>\r\n```\r\n\r\n### **Parameters**  \r\n- `<input_file>`: Path to the CSV file containing the decision matrix.  \r\n- `<weights>`: Comma-separated weights for each criterion (e.g., `0.2,0.1,0.43,0.3`).  \r\n- `<impacts>`: Comma-separated impacts for each criterion (e.g., `+,+,-,-`, where `+` indicates a benefit criterion and `-` indicates a cost criterion).  \r\n- `<output_file>`: Path to the output CSV file where the results will be saved.  \r\n\r\n---\r\n\r\n## **Example Usage**  \r\n\r\n### Input CSV (`input.csv`)  \r\n```bash\r\nFund Name,P1,P2,P3,P4,P5\r\nM1,0.91,0.83,6,53,15.19\r\nM2,0.88,0.77,4.1,61.1,16.71\r\nM3,0.67,0.45,3.5,59.4,16.01\r\nM4,0.83,0.69,4.8,44.9,12.81\r\nM5,0.74,0.55,6.7,66.3,18.57\r\nM6,0.6,0.36,4,37.8,10.69\r\nM7,0.72,0.52,4.4,40.7,11.59\r\nM8,0.73,0.53,4.4,66.8,18.12\r\n```\r\n\r\n### Command  \r\n```bash\r\npython -m 102217211_Ashmeet_topsis \"input.csv\" \"0.2,0.1,0.4,0.3,0.1\" \"-,+,+,-,+\" \"output.csv\"\r\n```\r\n\r\n### Output CSV (`output.csv`) \r\n```bash \r\nFund Name,P1,P2,P3,P4,P5,TOPSIS Score,Rank\r\nM1,0.91,0.83,6,53,15.19,0.7521,2\r\nM2,0.88,0.77,4.1,61.1,16.71,0.8256,1\r\nM3,0.67,0.45,3.5,59.4,16.01,0.4823,6\r\nM4,0.83,0.69,4.8,44.9,12.81,0.6332,4\r\nM5,0.74,0.55,6.7,66.3,18.57,0.6789,3\r\nM6,0.6,0.36,4,37.8,10.69,0.3145,8\r\nM7,0.72,0.52,4.4,40.7,11.59,0.4012,7\r\nM8,0.73,0.53,4.4,66.8,18.12,0.5798,5\r\n```\r\n\r\n---\r\n\r\n## **How It Works**  \r\n1. **Normalization**: The decision matrix is normalized to bring all criteria onto a comparable scale.  \r\n2. **Weighting**: Each criterion is multiplied by its corresponding weight.  \r\n3. **Ideal Solutions**: Calculates the ideal best and worst solutions based on the impacts.  \r\n4. **Distance Calculation**: Computes the distance of each alternative from the ideal best and worst solutions.  \r\n5. **Ranking**: Scores and ranks alternatives based on their relative closeness to the ideal solution.  \r\n\r\n---\r\n\r\n## **License**  \r\nThis project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.  \r\n\r\n---\r\n",
+        "description_content_type": "text/markdown",
+        "docs_url": null,
+        "download_url": null,
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "dynamic": null,
+        "home_page": "https://github.com/ashmkaur/102217211_Ashmeet_topsis",
+        "keywords": null,
+        "license": null,
+        "license_expression": null,
+        "license_files": null,
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "102217211-Ashmeet-topsis",
+        "package_url": "https://pypi.org/project/102217211-Ashmeet-topsis/",
+        "platform": null,
+        "project_url": "https://pypi.org/project/102217211-Ashmeet-topsis/",
+        "project_urls": {
+            "Homepage": "https://github.com/ashmkaur/102217211_Ashmeet_topsis"
+        },
+        "provides_extra": null,
+        "release_url": "https://pypi.org/project/102217211-Ashmeet-topsis/1.1.0/",
+        "requires_dist": [
+            "numpy",
+            "pandas"
+        ],
+        "requires_python": ">=3.6",
+        "summary": "A Python package for TOPSIS calculation",
+        "version": "1.1.0",
+        "yanked": false,
+        "yanked_reason": null
+    },
+    "last_serial": 27141853,
+    "ownership": {
+        "organization": null,
+        "roles": [
+            {
+                "role": "Owner",
+                "user": "ashmkaur__15"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "blake2b_256": "3ca266e93a07a7aafe71ff775bee04442b4a0c85fa3929d98d789e283fbff027",
+                "md5": "d67b5b7a6caa128f277b99bc85006af0",
+                "sha256": "64e2bc18349a3597d910b7b071d6ba28daae8ffb98af051fb756c373fb094572"
+            },
+            "downloads": -1,
+            "filename": "102217211_Ashmeet_topsis-1.1.0-py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "d67b5b7a6caa128f277b99bc85006af0",
+            "packagetype": "bdist_wheel",
+            "python_version": "py3",
+            "requires_python": ">=3.6",
+            "size": 5074,
+            "upload_time": "2025-01-26T20:00:19",
+            "upload_time_iso_8601": "2025-01-26T20:00:19.749041Z",
+            "url": "https://files.pythonhosted.org/packages/3c/a2/66e93a07a7aafe71ff775bee04442b4a0c85fa3929d98d789e283fbff027/102217211_Ashmeet_topsis-1.1.0-py3-none-any.whl",
+            "yanked": false,
+            "yanked_reason": null
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "blake2b_256": "472af553955d5c2d6c1477c89ab80c6364f87a1175e499f3262df9973fed598b",
+                "md5": "81a6b8bef459ee5bc51dea3785ccc95d",
+                "sha256": "496ae7343dfb8252012eaf4bba8170b1a65555221799b66e2fc22d07311fdccc"
+            },
+            "downloads": -1,
+            "filename": "102217211_Ashmeet_topsis-1.1.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "81a6b8bef459ee5bc51dea3785ccc95d",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "requires_python": ">=3.6",
+            "size": 4285,
+            "upload_time": "2025-01-26T20:00:22",
+            "upload_time_iso_8601": "2025-01-26T20:00:22.151544Z",
+            "url": "https://files.pythonhosted.org/packages/47/2a/f553955d5c2d6c1477c89ab80c6364f87a1175e499f3262df9973fed598b/102217211_Ashmeet_topsis-1.1.0.tar.gz",
+            "yanked": false,
+            "yanked_reason": null
+        }
+    ],
+    "vulnerabilities": []
+}
